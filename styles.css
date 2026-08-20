@@ -156,7 +156,8 @@ h1,h2,h3,h4,p{ margin:0; }
 .btn--pkg{
   height:60px; padding:0 45px; border-radius:8px;
   background:var(--yellow); color:#111;
-  font-family:var(--font-display); font-weight:600; font-size:28px; letter-spacing:-.2px;
+  font-family:var(--font-display); font-weight:600; font-size:clamp(17px, 12.4px + 1.22vw, 28px); letter-spacing:-.2px;
+  max-width:100%;
 }
 .btn--see{ height:36px; padding:0 31px; background:var(--yellow); color:#111; font-size:15px; font-weight:600; }
 
@@ -188,7 +189,7 @@ h1,h2,h3,h4,p{ margin:0; }
 .nav__link:hover{ color:var(--yellow); }
 .nav__link.is-active{ color:var(--yellow-nav); }
 .nav__link.is-bold{ font-weight:700; }
-.header .btn--book{ margin-left:59px; }
+.header .btn--book{ margin-left:35px; }
 
 .nav-toggle{ display:none; width:44px; height:44px; margin-left:auto; padding:10px; }
 .nav-toggle span{ display:block; height:2px; background:var(--white); border-radius:2px; margin:4px 0; }
@@ -219,7 +220,7 @@ h1,h2,h3,h4,p{ margin:0; }
   margin-top:10px;
   max-width:660px;
   font-family:var(--font-display); font-weight:700;
-  font-size:53px; line-height:63px; letter-spacing:-.4px;
+  font-size:clamp(30px, 21.9px + 2.16vw, 53px); line-height:1.1887; letter-spacing:-.4px;
   color:var(--yellow);
 }
 .hero__text{
@@ -280,7 +281,7 @@ h1,h2,h3,h4,p{ margin:0; }
 .story__title{
   max-width:1035px; margin-inline:auto; text-align:center;
   font-family:var(--font-display); font-weight:700;
-  font-size:50px; line-height:56px; letter-spacing:-.4px;
+  font-size:clamp(26px, 17.6px + 2.25vw, 50px); line-height:1.12; letter-spacing:-.4px;
   color:var(--white);
 }
 .story__title em{ font-style:normal; color:var(--yellow); }
@@ -312,7 +313,7 @@ h1,h2,h3,h4,p{ margin:0; }
 .menu__head{ display:flex; align-items:flex-start; justify-content:space-between; gap:40px; }
 .menu__title{
   font-family:var(--font-display); font-weight:700;
-  font-size:44px; line-height:52px; letter-spacing:-.6px;
+  font-size:clamp(26px, 19.7px + 1.69vw, 44px); line-height:1.1818; letter-spacing:-.6px;
 }
 .menu__sub{ margin-top:14px; max-width:460px; font-size:14px; line-height:20px; color:#B5B5B5; }
 .menu__head .arrows{ margin-top:20px; flex:none; }
@@ -345,27 +346,27 @@ h1,h2,h3,h4,p{ margin:0; }
 .packages__title{
   max-width:820px; margin-inline:auto;
   font-family:var(--font-display); font-weight:700;
-  font-size:42px; line-height:56px; letter-spacing:-.4px;
+  font-size:clamp(24px, 17.7px + 1.69vw, 42px); line-height:1.3333; letter-spacing:-.4px;
 }
 .rule{ display:block; width:248px; height:6px; border-radius:3px; background:var(--yellow); margin:46px auto 0; }
 
 .packages__grid{
-  display:grid; grid-template-columns:repeat(3,382px); gap:28px;
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:28px;
   justify-content:center; margin-top:43px;
 }
-.packages__grid img{ width:382px; height:294px; object-fit:cover; border-radius:6px; }
+.packages__grid img{ width:100%; height:294px; object-fit:cover; border-radius:6px; }
 .packages__cta{ margin-top:51px; }
 
 /* =====================================================
    QUOTE BANNER
    ===================================================== */
 .banner{
-  height:515px; display:grid; place-items:center; text-align:center; padding-bottom:14px;
+  height:515px; display:grid; grid-template-columns:minmax(0,1fr); place-items:center; text-align:center; padding-bottom:14px;
   background:linear-gradient(rgba(0,0,0,.46),rgba(0,0,0,.46)), url("Images/cta image.png") center/cover no-repeat;
 }
 .banner__quote{
   max-width:972px; margin-inline:auto;
-  font-size:29px; line-height:32px; font-weight:500; color:var(--white);
+  font-size:clamp(16px, 11.45px + 1.22vw, 29px); line-height:1.1034; font-weight:500; color:var(--white);
 }
 .banner__name{ display:block; margin-top:21px; font-size:22px; line-height:26px; font-weight:700; }
 .banner__stars{ display:flex; justify-content:center; gap:3px; margin-top:16px; color:var(--yellow); }
@@ -378,7 +379,7 @@ h1,h2,h3,h4,p{ margin:0; }
 .faq__title{
   max-width:670px;
   font-family:var(--font-display); font-weight:700;
-  font-size:48px; line-height:56px; letter-spacing:-.6px;
+  font-size:clamp(26px, 18.2px + 2.07vw, 48px); line-height:1.1667; letter-spacing:-.6px;
 }
 .faq__aside{ margin-top:12px; }
 .faq__aside p{ font-size:15.5px; line-height:23px; color:var(--grey-1); }
@@ -422,7 +423,7 @@ h1,h2,h3,h4,p{ margin:0; }
 .testi{ background:#000; padding:177px 0 0; }
 .testi__quote{ position:relative; }
 .qmark{ position:absolute; width:99px; height:75px; color:var(--gold); }
-.qmark svg{ display:block; }
+.qmark svg{ display:block; width:100%; height:100%; }
 .qmark--open{ left:76px; top:-45px; }
 .qmark--close{ left:956px; top:159px; }
 
@@ -430,7 +431,7 @@ h1,h2,h3,h4,p{ margin:0; }
   position:relative; z-index:2;
   max-width:1010px; margin:0 auto; text-align:center;
   font-family:var(--font-display); font-weight:700; text-transform:uppercase;
-  font-size:33px; line-height:47px; letter-spacing:.1px;
+  font-size:clamp(18px, 12.7px + 1.41vw, 33px); line-height:1.4242; letter-spacing:.1px;
   color:var(--white);
 }
 .testi__title em{ font-style:normal; color:var(--yellow); }
@@ -491,6 +492,9 @@ h1,h2,h3,h4,p{ margin:0; }
 
 /* =====================================================
    RESPONSIVE
+   Breakpoints: 1439 / 1199 / 991 / 767 / 479.
+   Heading sizes scale fluidly via clamp() in the base
+   rules, so these blocks only deal with layout.
    ===================================================== */
 @media (max-width:1439px){
   .faq__head{ grid-template-columns:1fr minmax(0,430px); gap:40px; }
@@ -504,52 +508,68 @@ h1,h2,h3,h4,p{ margin:0; }
   .hero__right{ width:420px; }
   .hero__photo{ width:420px; height:460px; }
   .fcard--quality{ top:auto; bottom:-60px; left:-24px; }
-  .hero__title{ font-size:46px; line-height:56px; }
-  .story__title{ font-size:42px; line-height:50px; }
-  .menu__title,.faq__title{ font-size:38px; line-height:46px; }
-  .packages__title{ font-size:36px; line-height:48px; }
-  .packages__grid{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-  .packages__grid img{ width:100%; height:auto; }
-  .btn--pkg{ font-size:24px; }
-  .testi__title{ font-size:26px; line-height:40px; }
+
+  .packages__grid img{ height:auto; }
+
+  /* a fixed 627px accordion column squeezed the photo into a sliver */
+  .faq__body{ grid-template-columns:minmax(0,1fr) minmax(0,340px); gap:40px; }
+  .faq__photo{ height:520px; }
+
+  .story__stage{ height:auto; display:flex; flex-direction:column; align-items:center; }
+  .story__photo{ width:100%; max-width:604px; height:auto; left:0; }
+  .stat{ position:static; margin:14px auto 0; }
+  .stat--a,.stat--b,.stat--c{ inset:auto; }
+
+  /* fixed 313/355/313px shots overflow below ~1030px; flex:none stops them shrinking */
+  .testi__shots{ padding-left:0; }
+  .testi__side{ width:27%; height:auto; }
+  .testi__main{ width:31%; height:auto; }
   .qmark{ width:76px; height:58px; }
   .qmark--open{ left:0; top:-30px; }
   .qmark--close{ left:auto; right:0; top:150px; }
-  .story__stage{ height:auto; }
-  .story__photo{ width:100%; max-width:604px; height:auto; }
-  .stat{ position:static; margin:14px auto 0; }
-  .stat--a,.stat--b,.stat--c{ inset:auto; }
-  .story__stage{ display:flex; flex-direction:column; align-items:center; }
-  .story__photo{ left:0; }
-  .testi__shots{ padding-left:0; }
+
   .footer__cols{ grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:24px; }
 }
 
 @media (max-width:991px){
   .nav{
     position:absolute; top:120px; left:0; right:0;
-    flex-direction:column; align-items:stretch; gap:0;
+    flex-direction:column; align-items:stretch; gap:0; margin-left:0;
     background:#1F1E1E; border-radius:12px; padding:8px 0;
     display:none;
   }
   .nav.is-open{ display:flex; }
   .nav__link{ padding:14px 20px; }
   .nav-toggle{ display:block; }
-  .header .btn--book{ display:none; }
   .header__inner{ position:relative; }
+  /* the booking CTA rides inside the dropdown instead of being hidden */
+  .header .btn--book{ margin:8px 20px 12px; height:48px; min-width:0; }
 
   .hero{ padding-bottom:90px; }
   .hero__inner{ grid-template-columns:minmax(0,1fr); gap:48px; }
   .hero__right{ width:100%; max-width:500px; margin-inline:auto; }
   .hero__photo{ width:100%; height:auto; }
   .fcard--quality{ bottom:-40px; left:0; }
-  .hero__title{ font-size:40px; line-height:50px; }
+  .michelin{ left:8px; top:8px; }
 
   .faq__head{ grid-template-columns:1fr; gap:28px; }
   .faq__body{ grid-template-columns:1fr; gap:40px; }
   .faq__photo{ height:auto; }
   .menu__head{ flex-direction:column; }
   .menu__head .arrows{ margin-top:0; }
+
+  /* carousel becomes swipeable rather than arrow-only */
+  .menu__viewport{
+    height:auto;
+    overflow-x:auto; overflow-y:hidden;
+    overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    scrollbar-width:none;
+  }
+  .menu__viewport::-webkit-scrollbar{ display:none; }
+  .menu__track{ transform:none !important; padding-bottom:56px; }
+  .dish{ scroll-snap-align:start; }
 
   .footer__top{ grid-template-columns:1fr; }
   .footer__right{ align-items:flex-start; }
@@ -559,39 +579,72 @@ h1,h2,h3,h4,p{ margin:0; }
 }
 
 @media (max-width:767px){
-  .hero__title{ font-size:32px; line-height:40px; }
-  .hero__thumbs img{ width:calc(50% - 11px); height:auto; }
   .hero__thumbs{ margin-top:32px; }
+  .hero__thumbs img{ width:calc(50% - 11px); height:auto; }
   .story{ padding:64px 0 72px; }
-  .story__title{ font-size:28px; line-height:36px; }
   .story__text{ font-size:14px; line-height:23px; }
   .menu{ padding-top:64px; padding-bottom:72px; }
-  .menu__title{ font-size:28px; line-height:36px; }
-  .menu__viewport{ height:auto; }
-  .menu__track{ gap:18px; }
+  .menu__track{ gap:18px; padding-bottom:8px; }
   .dish{ width:250px; height:360px; }
   .dish:nth-child(even){ transform:none; }
   .packages{ padding:64px 0 72px; }
-  .packages__title{ font-size:26px; line-height:36px; }
   .packages__grid{ grid-template-columns:1fr; gap:20px; }
   .rule{ margin-top:28px; }
-  .btn--pkg{ font-size:18px; height:52px; }
+  .btn--pkg{ height:52px; padding:0 24px; }
   .banner{ height:auto; padding:72px 0; }
-  .banner__quote{ font-size:17px; line-height:26px; }
+  .banner__quote{ line-height:1.45; }
   .faq{ padding-top:64px; }
-  .faq__title{ font-size:28px; line-height:36px; }
   .acc{ gap:16px; }
   .testi{ padding-top:72px; }
   .testi__quote{ padding:0; }
-  .testi__title{ font-size:19px; line-height:30px; margin-top:40px; }
+  .testi__title{ margin-top:40px; }
   .qmark{ width:52px; height:39px; }
   .qmark--open{ top:-24px; }
   .qmark--close{ top:auto; bottom:-26px; left:auto; right:0; }
   .testi__shots{ margin-top:40px; }
-  .testi__side{ width:34%; height:auto; }
-  .testi__main{ width:40%; height:auto; }
+  .testi__side{ width:30%; }
+  .testi__main{ width:36%; }
   .footer__cols{ grid-template-columns:1fr 1fr; row-gap:32px; }
   .footer__bottom{ flex-direction:column; align-items:flex-start; margin-top:48px; }
   .footer__legal{ flex-wrap:wrap; gap:14px; font-size:13px; }
   .subscribe{ width:100%; }
+}
+
+/* ---------- small phones (320–479) ---------- */
+@media (max-width:479px){
+  .container{ max-width:calc(100% - 32px); }
+  .header__logo img{ height:70px; }
+  .nav{ top:100px; }
+
+  .hero{ padding-bottom:72px; }
+  .hero__inner{ padding-top:36px; }
+  .pill{ height:auto; min-height:32px; padding:7px 14px; line-height:1.35; }
+  .hero__actions{ gap:10px; }
+  .btn--yellow,.btn--white{ width:auto; flex:1 1 0; min-width:0; padding:0 14px; }
+  .hero__thumbs{ gap:12px; }
+  .hero__thumbs img{ width:calc(50% - 6px); }
+
+  .michelin{ width:108px; height:68px; gap:9px; padding-bottom:6px; }
+  .michelin__stars{ gap:3px; }
+  .michelin__stars svg{ width:22px; height:22px; }
+  .michelin__label{ font-size:13px; }
+  .fcard--quality{ width:132px; height:122px; }
+  .fcard__title{ font-size:13px; }
+  .fcard__sub{ font-size:10px; }
+
+  .dish{ width:calc(100vw - 64px); max-width:280px; height:340px; }
+
+  .btn--pkg{ height:auto; min-height:48px; padding:12px 18px; white-space:normal; line-height:1.25; }
+
+  .acc__q{ padding:0 54px 0 13px; font-size:15px; }
+  .acc__ico{ width:34px; height:34px; right:10px; }
+  .acc__item.is-open .acc__q{ font-size:15.5px; }
+  .acc__a{ padding:0 54px 18px 13px; }
+
+  .arrow{ width:42px; height:42px; }
+  .socials{ gap:10px; }
+  .socials a{ width:42px; height:42px; }
+  .footer__logo{ height:74px; }
+  .fcol h4{ font-size:19px; }
+  .footer__legal{ gap:12px; font-size:12.5px; }
 }

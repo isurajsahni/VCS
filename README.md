@@ -12,13 +12,15 @@ Double-click `index.html`.
 
 That's it — there is nothing to install and nothing to compile. If you would
 rather serve it over HTTP (recommended when testing, since it matches how the
-page behaves once deployed), any static server will do:
+page behaves once deployed), a dev-only server is bundled:
 
 ```bash
-python -m http.server 5173
+node .claude/serve.js
 ```
 
-Then open <http://localhost:5173>.
+Then open <http://localhost:5173>. Any other static server works just as well
+(`npx serve`, `python -m http.server 5173`, …) — none of them is a dependency
+of the site itself.
 
 ## Files
 
@@ -34,6 +36,35 @@ Then open <http://localhost:5173>.
 
 Header → Hero → Stats/story → Signature menu carousel → Packages → Quote banner →
 FAQ accordion → Testimonials → Footer
+
+## Responsive
+
+Verified from 320 px to 1920 px: no horizontal scrolling, nothing clipped, and
+no element escaping the viewport at any width in that range.
+
+Display headings scale fluidly with `clamp()` instead of stepping at each
+breakpoint. Every clamp's upper bound is its reference value, so the 1440 px
+design is still reproduced exactly — the page height lands at 6481 px, as it did
+before.
+
+| Breakpoint | What changes |
+| --- | --- |
+| ≤ 1439 px | FAQ columns rebalance; footer link columns narrow |
+| ≤ 1199 px | Hero art shrinks; stat cards unstack and centre; packages, testimonial shots and the FAQ photo become fluid |
+| ≤ 991 px | Hamburger nav; hero goes single-column; menu carousel becomes swipeable |
+| ≤ 767 px | Packages stack; footer drops to two columns; smaller carousel cards |
+| ≤ 479 px | Tighter gutters, smaller badges, arrows and accordion controls |
+
+Two behaviours worth knowing:
+
+- **The carousel changes mechanism, not just size.** Above 991 px it is a
+  transform slider; below, `.menu__viewport` becomes a native scroll-snap
+  container so it can be swiped on a phone, and the arrows drive `scrollLeft`.
+  They assign it directly rather than animating — CSS scroll-snap cancels
+  programmatic smooth scrolling, and a hand-rolled animation stalls whenever the
+  tab is backgrounded and `requestAnimationFrame` pauses.
+- **The booking CTA moves into the dropdown** on small screens rather than being
+  hidden, so the primary action stays reachable on a phone.
 
 ## Fonts
 
